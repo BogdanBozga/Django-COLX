@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'OLXClone.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'COLX.settings')
 
 application = get_asgi_application()

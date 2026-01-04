@@ -24,13 +24,16 @@ class Product(models.Model):
     description = models.TextField()
     added_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='uploads/products/', blank=True)
 
     def __str__(self):
         return self.name
 
     def is_recent_product(self):
         return self.added_date >= timezone.now() - datetime.timedelta(days=1)
+
+    @property
+    def main_image(self):
+        return self.images.filter(is_main=True).first()
 
     @staticmethod
     def get_products_all():
@@ -71,6 +74,7 @@ def product_image_path(instance, filename):
 
 
 class ProductImage(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to=product_image_path, blank=True)
+    is_main = models.BooleanField(default=False)
     added_date = models.DateTimeField(auto_now_add=True)

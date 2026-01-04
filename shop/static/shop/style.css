@@ -154,3 +154,132 @@ main {
 .product-link p {
     margin: 5px 0; /* Spacing between text lines */
 }
+.product-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.product-main {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.product-image-section {
+    flex: 1;
+    max-width: 500px;
+}
+
+.product-image-section img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.product-details-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-details-section h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.product-price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 15px 0;
+}
+
+.product-location {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 10px 0;
+}
+
+.product-date {
+    font-size: 14px;
+    color: #95a5a6;
+    margin: 10px 0;
+}
+
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+.product-description, .seller-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.product-description h3, .seller-info h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.product-description p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.seller-info p {
+    margin: 8px 0;
+    color: #555;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .product-main {
+        flex-direction: column;
+    }
+
+    .product-image-section {
+        max-width: 100%;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+}

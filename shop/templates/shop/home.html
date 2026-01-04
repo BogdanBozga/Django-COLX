@@ -9,7 +9,7 @@
             <li class="product-item">
                 <a href="{% url 'shop:product' product.id %}" class="product-link" class="product-link">
                     {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="product image">
+                        <img src="{{ product.main_image }}" alt="product image">
                     {% else %}
                         <img src="{% static 'shop/images/default_product_image.png' %}" alt="product image">
                     {% endif %}

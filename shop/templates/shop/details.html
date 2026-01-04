@@ -1,12 +1,40 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Product info{% endblock %}
+{% block title %}{{ product.name }} - Product Info{% endblock %}
 
 {% block content %}
-    <div>
-        Images and User details
-    </div>
-    <div>
-        Description
+    <div class="product-container">
+        <div class="product-main">
+            <div class="product-image-section">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                {% else %}
+                    <img src="{% static 'shop/images/default_product_image.png' %}" alt="{{ product.name }}">
+                {% endif %}
+            </div>
+
+            <div class="product-details-section">
+                <h1>{{ product.name }}</h1>
+                <p class="product-price">{{ product.price }} lei</p>
+                <p class="product-location">📍 {{ product.location }}</p>
+                <p class="product-date">Posted: {{ product.added_date|date:"d M Y" }}</p>
+
+                <div class="product-actions">
+                    <button class="btn-primary">Add to Cart</button>
+                    <button class="btn-secondary">Contact Seller</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-description">
+            <h3>Description</h3>
+            <p>{{ product.description|default:"No description available." }}</p>
+        </div>
+
+        <div class="seller-info">
+            <h3>Seller Information</h3>
+            <p><strong>Name:</strong> {{ product.seller.username|default:"Anonymous" }}</p>
+            <p><strong>Member since:</strong> {{ product.seller.date_joined|date:"M Y"|default:"N/A" }}</p>
+        </div>
     </div>
 {% endblock %}

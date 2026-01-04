@@ -25,6 +25,6 @@ def user_detail(request, user_id):
 
 
 def home(request):
-    products = Product.objects.all()
+    products = Product.objects.all()[:20]
     context = {'products_list': products}
     return render(request, "shop/home.html", context)

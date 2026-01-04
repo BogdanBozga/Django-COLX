@@ -15,7 +15,7 @@ main {
 .site-header {
     background-color: #104609;
     color: white;
-    padding: 20px;
+    padding: 15px 20px;
     position: sticky; /* Stays at top when scrolling */
     top: 0;
     z-index: 100; /* Appears above other content */
@@ -28,9 +28,21 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: flex-end;
 }
 
+.site-header nav {
+    display: flex;
+    gap: 30px; /* Space between links */
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+    justify-content: flex-end;
+}
 
+.site-header nav .left {
+    margin-right: auto;
+}
 .site-header a{
     color: #ecf0f1;
     text-decoration: none;

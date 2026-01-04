@@ -24,7 +24,7 @@ class Product(models.Model):
     description = models.TextField()
     added_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
-    images = models.ImageField(upload_to='uploads/products/', blank=True)
+    image = models.ImageField(upload_to='uploads/products/', blank=True)
 
     def __str__(self):
         return self.name

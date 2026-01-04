@@ -1,20 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "base.html" %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'shop/style.css' %}">
-{% if products_list %}
-    <ul>
-    {% for product in products_list %}
-        <li><a href="{% url 'shop:product' product.id %}">{{ product.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No products are available.</p>
-{% endif %}
-</body>
-</html>
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+    {% if products_list %}
+        <ul class="product-list">
+        {% for product in products_list %}
+            <li class="product-item">
+                <a href="{% url 'shop:product' product.id %}" class="product-link" class="product-link">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="product image">
+                    {% else %}
+                        <img src="{% static 'shop/images/default_product_image.png' %}" alt="product image">
+                    {% endif %}
+                    <p>{{ product.name }}</p>
+                    <p>{{ product.price }}</p>
+                    <p>{{ product.location }}</p>
+                    <p>{{ product.added_date }}</p>
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No products are available.</p>
+    {% endif %}
+{% endblock %}

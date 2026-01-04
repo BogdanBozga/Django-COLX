@@ -14,9 +14,9 @@
                         <img src="{% static 'shop/images/default_product_image.png' %}" alt="product image">
                     {% endif %}
                     <p>{{ product.name }}</p>
-                    <p>{{ product.price }}</p>
+                    <p>{{ product.price }} {{ product.currency }}</p>
                     <p>{{ product.location }}</p>
-                    <p>{{ product.added_date }}</p>
+                    <p>{{ product.added_date_simple }}</p>
                 </a>
             </li>
         {% endfor %}

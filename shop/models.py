@@ -19,6 +19,7 @@ class UserProfile(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    currency = models.CharField(max_length=100, default='Ron')
     location = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
     description = models.TextField()
@@ -34,6 +35,10 @@ class Product(models.Model):
     @property
     def main_image(self):
         return self.images.filter(is_main=True).first()
+
+    @property
+    def added_date_simple(self):
+        return self.added_date.date()
 
     @staticmethod
     def get_products_all():

@@ -15,7 +15,7 @@
 
             <div class="product-details-section">
                 <h1>{{ product.name }}</h1>
-                <p class="product-price">{{ product.price }} lei</p>
+                <p class="product-price">{{ product.price }} {{ product.currency }}</p>
                 <p class="product-location">📍 {{ product.location }}</p>
                 <p class="product-date">Posted: {{ product.added_date|date:"d M Y" }}</p>
 

@@ -1,3 +1,144 @@
-li a {
-    color: green
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Makes main content grow to push footer down */
+}
+
+.site-header {
+    background-color: #104609;
+    color: white;
+    padding: 20px;
+    position: sticky; /* Stays at top when scrolling */
+    top: 0;
+    z-index: 100; /* Appears above other content */
+}
+
+
+.site-header nav {
+    display: flex;
+    gap: 30px; /* Space between links */
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+.site-header a{
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+    align-content: center;
+}
+
+.site-header a:hover {
+    color: #3498db;
+    transform: translateY(-3px); /* Lift up slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+/* Footer styles */
+.site-footer {
+    background-color: #104609;
+    color: #ecf0f1;
+    padding: 10px 10px 10px;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 2px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.footer-section a {
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #3498db;
+    transform: translateY(-3px); /* Lift up slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.footer-section p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
+    justify-content: space-between; /* Space items evenly along the main axis */
+    list-style: none; /* Remove list styles */
+    padding: 0;
+}
+
+.product-item {
+    flex: 1; /* Grow to fill available space evenly */
+    max-width: 20%; /* Limit item width to avoid overcrowding */
+    margin: 10px; /* Add spacing between items */
+    border: 1px solid #ccc; /* Add a border for visual separation */
+    padding: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%; /* Image won't exceed box width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center the image */
+}
+
+.product-link {
+    display: block; /* Makes the entire box clickable */
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Use default text color */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
+}
+
+.product-link:hover {
+    transform: translateY(-5px); /* Lift up slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    border-color: #999; /* Darker border */
+}
+
+.product-link p {
+    margin: 5px 0; /* Spacing between text lines */
 }

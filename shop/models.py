@@ -64,9 +64,11 @@ class Product(models.Model):
         # This should be a function that can combine multiple filters
         # and use multiple data about products.
 
+
 def product_image_path(instance, filename):
     # Images go to products/<product_id>/<filename>
     return f'products/{instance.product.id}/{filename}'
+
 
 class ProductImage(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

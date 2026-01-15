@@ -9,14 +9,16 @@ main {
     flex: 1; /* Makes main content grow to push footer down */
 }
 
-.site-header {
-    background-color: #104609;
-    color: white;
-    padding: 15px 20px;
-    position: sticky; /* Stays at top when scrolling */
-    top: 0;
-    z-index: 100; /* Appears above other content */
-}
+/*.site-header {*/
+/*    background-color: #104609;*/
+/*    color: white;*/
+/*    padding: 15px 20px;*/
+/*    position: sticky; !* Stays at top when scrolling *!*/
+/*    top: 0;*/
+/*    z-index: 100; !* Appears above other content *!*/
+/*}*/
+
+
 
 .site-header nav {
     display: flex;
@@ -25,6 +27,17 @@ main {
     margin: 0 auto;
     transition: transform 0.2s, box-shadow 0.2s;
     justify-content: flex-end;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo {
+    height: 10PX;
+    width: auto;
 }
 
 .site-header nav .left {

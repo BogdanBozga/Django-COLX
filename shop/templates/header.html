@@ -1,9 +1,15 @@
+{% load static %}
 <header>
     <div class="site-header">
         <nav>
-            <a href="{% url 'shop:home' %}" class="left"> &#8962; Home</a>
-            <a href="#">&#128722; Cart</a>
-            <a href="#">&#128199; Account</a>
+            <div class="logo-section">
+                <img src="{% static 'shop/images/logo2.png' %}" alt="Site Logo" class="logo">
+                <a href="{% url 'shop:home' %}" class="nav-link">&#8962; Home</a>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link">&#128722; Cart</a>
+                <a href="#" class="nav-link">&#128199; Account</a>
+            </div>
         </nav>
     </div>
 </header>

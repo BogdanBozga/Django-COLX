@@ -1,20 +1,8 @@
 import datetime
 
-from django.contrib.auth.models import User
 from django.db import models
 from django.utils import timezone
-
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    address = models.CharField(max_length=100)
-    rating = models.DecimalField(max_digits=5, decimal_places=2)
-    phone_number = models.CharField(max_length=11)
-    avatar = models.ImageField(upload_to='avatars/', blank=True)
-
-    def __str__(self):
-        return self.user.username
-
+from apps.users.models import UserProfile
 
 class Product(models.Model):
     name = models.CharField(max_length=100)
